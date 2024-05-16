@@ -4,18 +4,20 @@ import { useState } from 'react';
 const FormSubmit = (props) =>{
     const agregarCita = (e)=>{
         e.preventDefault();
-        props.setCitas(
-            [
-                ...props.citas,
-                {
-                    nombreMascota: e.target.NombreMascota.value,
-                    nombreDueño: e.target.NombreDueño.value,
-                    fecha: e.target.Fecha.value,
-                    hora: e.target.Hora.value,
-                    sintomas: e.target.Sintomas.value
-                }
-            ]
-        )
+        if (window.confirm('¿Estás seguro de que deseas crear esta cita?')) {
+            props.setCitas(
+                [
+                    ...props.citas,
+                    {
+                        nombreMascota: e.target.NombreMascota.value,
+                        nombreDueño: e.target.NombreDueño.value,
+                        fecha: e.target.Fecha.value,
+                        hora: e.target.Hora.value,
+                        sintomas: e.target.Sintomas.value
+                    }
+                ]
+            )
+        }
         
     }
     return(

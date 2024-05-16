@@ -12,7 +12,7 @@ function App() {
         <>
           <Titulo texto="ADMINISTRADOR DE PACIENTES" />
           <div className="container">
-         <div className="row">
+          <div className="row">
                 <div className="one-half column">
                     <Subtitulo texto = "CREAR MI CITA"/>
                     <FormSubmit citas = { citas } setCitas = {setCitas} />
